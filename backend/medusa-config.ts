@@ -2,7 +2,7 @@ import { defineConfig, loadEnv, Modules } from "@medusajs/framework/utils";
 
 loadEnv(process.env.NODE_ENV, process.cwd());
 
-// const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = process.env.DATABASE_URL;
 // const DB_NAME = process.env.DB_NAME;
 
 
@@ -12,9 +12,9 @@ const DB_HOST = process.env.DB_HOST;
 const DB_PORT = process.env.DB_PORT;
 const DB_DATABASE = process.env.DB_DATABASE;
 
-const DATABASE_URL =
-  `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
-  `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
+// const DATABASE_URL =
+//   `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
+//   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
 
 // const FINAL_DATABASE_URL =
 //   `${DATABASE_URL}/${DB_NAME}`;
