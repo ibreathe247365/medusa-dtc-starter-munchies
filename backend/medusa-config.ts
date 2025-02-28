@@ -2,10 +2,17 @@ import { defineConfig, loadEnv, Modules } from "@medusajs/framework/utils";
 
 loadEnv(process.env.NODE_ENV, process.cwd());
 
+const DATABASE_URL = process.env.DATABASE_URL;
+const DB_NAME = process.env.DB_NAME;
+
+
+const FINAL_DATABASE_URL =
+  `${DATABASE_URL}/${DB_NAME}`;
+
 export default defineConfig({
   projectConfig: {
     redisUrl: process.env.REDIS_URL,
-    databaseUrl: process.env.DATABASE_URL,
+    databaseUrl: FINAL_DATABASE_URL,
     databaseLogging: true,
     http: {
       storeCors: process.env.STORE_CORS,
@@ -16,8 +23,8 @@ export default defineConfig({
     },
   },
   admin: {
-    backendUrl: "https://munchies.medusajs.app",
-    // backendUrl: "http://localhost:9000",
+    // backendUrl: "https://munchies.medusajs.app",
+    backendUrl: "http://localhost:9000",
   },
   modules: [
     {
